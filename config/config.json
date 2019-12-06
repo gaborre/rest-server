@@ -1,0 +1,8 @@
+{
+    "user": {
+        "getUser": "/user/:id",
+        "insertUser": "/user",
+        "updateUser": "/user/:id",
+        "deleteUser": "/user/:id"
+    }
+}
