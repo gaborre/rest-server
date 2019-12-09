@@ -25,7 +25,8 @@ exports.insertUser = function(req, res) {
         console.log("params: " + JSON.stringify(req.params));
         console.log("body: " + JSON.stringify(req.body));
         console.log("headers: " + JSON.stringify(req.headers));
-        res.json(utils.getResponse(200, "User saved successfully", {}));
+        let saved = req && req.body ? req.body : {};
+        res.json(utils.getResponse(200, "User saved successfully", saved));
     } catch(ex) {
         console.error(ex);
         res.json(utils.getResponse(500, ex, {}));
@@ -38,7 +39,8 @@ exports.updateUser = function(req, res) {
         console.log("params: " + JSON.stringify(req.params));
         console.log("body: " + JSON.stringify(req.body));
         console.log("headers: " + JSON.stringify(req.headers));
-        res.json(utils.getResponse(200, "User updated successfully", {}));
+        let updated = req && req.body ? req.body : {};
+        res.json(utils.getResponse(200, "User updated successfully", updated));
     } catch(ex) {
         console.error(ex);
         res.json(utils.getResponse(500, ex, {}));
