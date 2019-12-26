@@ -12,11 +12,11 @@ const userDao = require("./../dao/user-dao");
  */
 exports.execute = function(app, upload) {
     
-    app.get(config.user.getUser, userDao.getUser);
+    app.get(config.user.get, userDao.getUser);
     
-    app.post(config.user.insertUser, upload.array(), userDao.insertUser);
+    app.post(config.user.insert, upload.array(), userDao.insertUser);
     
-    app.delete(config.user.deleteUser, upload.array(), userDao.deleteUser);
+    app.delete(config.user.delete, upload.array(), userDao.deleteUser);
     
-    app.put(config.user.updateUser, upload.array(), userDao.updateUser);
+    app.put(config.user.update, upload.array(), userDao.updateUser);
 };
